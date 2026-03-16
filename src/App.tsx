@@ -1,6 +1,6 @@
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { ToastProvider } from "./contexts/ToastContext";
 import { Header } from "./components/layout/Header";
@@ -16,7 +16,7 @@ import { MyLearning } from "./pages/MyLearning";
 import { CreatorDashboard } from "./pages/CreatorDashboard";
 import { CourseBuilder } from "./pages/CourseBuilder";
 import { Profile } from "./pages/Profile";
-import { Notifications } from "./pages/Notifications";
+import { Notifications as NotificationsPage } from "./pages/Notifications";
 import { Achievements } from "./pages/Achievements";
 import { Goals } from "./pages/Goals";
 import { Wishlist } from "./pages/Wishlist";
@@ -132,7 +132,7 @@ function AppRoutes() {
       <Route path="/notifications" element={
         <AppLayout>
           <ProtectedRoute>
-            <PageTransition><Notifications /></PageTransition>
+            <PageTransition><NotificationsPage /></PageTransition>
           </ProtectedRoute>
         </AppLayout>
       } />
